@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "01 config_debug",
+        "type": "shell",
+        "command": "./config_debug.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "02 config_release",
+        "type": "shell",
+        "command": "./config_release.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "03 build_debug",
+        "type": "shell",
+        "command": "./build_debug.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "04 build_release",
+        "type": "shell",
+        "command": "./build_release.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "05 install",
+        "type": "shell",
+        "command": "./install.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+    ]
+  }

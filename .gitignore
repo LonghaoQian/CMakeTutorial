@@ -1,0 +1,5 @@
+# Build Outputs
+build/**
+out/**
+build_release/**
+build_debug/**
