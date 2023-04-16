@@ -1,3 +1,4 @@
+// test the effect of compiler optimization
 #include <iostream>
 #include <vector>
 #include <chrono>

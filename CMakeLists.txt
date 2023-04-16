@@ -9,11 +9,17 @@ message("-- build type is set to " ${CMAKE_BUILD_TYPE})
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
     message("build type is debug")
     set(GNU_FLAGS "-Wall;-Werror;-Wextra;-O0;-g;-fno-omit-frame-pointer;-fsanitize=address")
+    set(LASAN -lasan)
 else()
     message("build type is release")
     set(GNU_FLAGS "-O3;-Wall")
+    set(LASAN "") # no lasan lib is add in release mode
 endif()
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)
-target_link_libraries(test1 PUBLIC -lasan)
+target_link_libraries(test1 PUBLIC ${LASAN})
 target_compile_options(test1 PUBLIC ${GNU_FLAGS})
+
+add_executable(test2 src/test2.cpp)
+target_link_libraries(test2 PUBLIC ${LASAN})
+target_compile_options(test2 PUBLIC ${GNU_FLAGS})
