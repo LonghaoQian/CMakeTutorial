@@ -12,7 +12,7 @@ if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")
     set(LASAN -lasan)
 else()
     message("build type is release")
-    set(GNU_FLAGS "-O3;-Wall")
+    set(GNU_FLAGS "-O3")
     set(LASAN "") # no lasan lib is add in release mode
 endif()
 #--------------- build target --------------------------
