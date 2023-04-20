@@ -10,14 +10,14 @@ int main(void)
     int32_t *ptr1 = new int32_t(60);
     std::cout<<*ptr1<<'\n';
     delete ptr1;
-    // std::cout<<*ptr1<<'\n';
-    //*ptr1 = 2;
-    //std::cout<<*ptr1<<'\n';
+    std::cout<<*ptr1<<'\n';
+    *ptr1 = 2;
+    std::cout<<*ptr1<<'\n';
     // invalid access: heap variable out of bound
     int32_t *ptr2 = new int32_t[2]{60, 80};
     std::cout<<ptr2[3]<<'\n';
     // deleter mismatch
-    // delete ptr2;
-    delete[] ptr2;
+    delete ptr2;
+    // delete[] ptr2;
     return 0;
 }

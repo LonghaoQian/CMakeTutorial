@@ -23,3 +23,11 @@ target_compile_options(test1 PUBLIC ${GNU_FLAGS})
 add_executable(test2 src/test2.cpp)
 target_link_libraries(test2 PUBLIC ${LASAN})
 target_compile_options(test2 PUBLIC ${GNU_FLAGS})
+
+add_executable(test3 src/test3.cpp)
+target_link_libraries(test3 PUBLIC ${LASAN})
+target_compile_options(test3 PUBLIC ${GNU_FLAGS})
+
+add_executable(test4 src/test4.cpp)
+target_link_libraries(test4 PUBLIC ${LASAN})
+target_compile_options(test4 PUBLIC ${GNU_FLAGS})

@@ -1,1 +1,1 @@
-cmake --build build_release -j4
+cmake --build build_release
