@@ -1,1 +1,3 @@
 add_subdirectory(static)
+add_subdirectory(shared)
+add_subdirectory(header_only)

@@ -34,3 +34,7 @@ target_compile_options(test3 PUBLIC ${GNU_FLAGS})
 add_executable(test4 src/test4.cpp)
 target_link_libraries(test4 PUBLIC ${LASAN})
 target_compile_options(test4 PUBLIC ${GNU_FLAGS})
+
+add_executable(test5 src/test5.cpp)
+target_link_libraries(test5 PUBLIC ${LASAN} MyLibB MyLibC)
+target_compile_options(test5 PUBLIC ${GNU_FLAGS})

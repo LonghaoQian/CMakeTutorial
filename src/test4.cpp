@@ -3,9 +3,9 @@
 class MyInt
 {
 public:
-    MyInt(int * pdNum)
+    MyInt(int *pdNum)
     {
-        std::cout<<"in MyInt(int*)"<<'\n';
+        std::cout << "in MyInt(int*)" << '\n';
         pdNimPtr = pdNum;
     }
     int getMyInt() const
@@ -14,19 +14,21 @@ public:
     }
     ~MyInt(void)
     {
-        std::cout<<"in ~MyInt()"<<'\n';
-        if(pdNimPtr != nullptr) {
+        std::cout << "in ~MyInt()" << '\n';
+        if (pdNimPtr != nullptr)
+        {
             delete pdNimPtr;
         }
     }
+
 private:
     int *pdNimPtr{nullptr};
 };
 
 void Print(MyInt input)
 {
-    std::cout<<"in print_MyInt"<<'\n';
-    std::cout<<input.getMyInt()<<'\n';
+    std::cout << "in print_MyInt" << '\n';
+    std::cout << input.getMyInt() << '\n';
 }
 
 int main(void)
@@ -35,6 +37,6 @@ int main(void)
     Print(pdNum);
     int *pdNewNum = new int(888);
     *pdNum = 18;
-    std::cout<<*pdNewNum<<'\n';
+    std::cout << *pdNewNum << '\n';
     return 0;
 }

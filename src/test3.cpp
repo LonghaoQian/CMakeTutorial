@@ -7,12 +7,15 @@
 #include <random>
 #include "test_lib_a.h"
 
-int64_t GetSum(const std::vector<int32_t>& input)
+int64_t GetSum(const std::vector<int32_t> &input)
 {
     int64_t res = 0;
-    for(uint32_t i = 0; i < 20; i++) {
-        for(auto& t : input) {
-            if(t < 10) {
+    for (uint32_t i = 0; i < 20; i++)
+    {
+        for (auto &t : input)
+        {
+            if (t < 10)
+            {
                 res++;
             }
         }
@@ -28,7 +31,8 @@ int main(void)
     b.reserve(SIZE);
     std::default_random_engine generator;
     std::uniform_int_distribution<int32_t> distrubution(1, 100);
-    for(uint32_t i = 0; i < SIZE; i++) {
+    for (uint32_t i = 0; i < SIZE; i++)
+    {
         b.emplace_back(distrubution(generator));
     }
     auto c = b; // make a copy
@@ -37,12 +41,12 @@ int main(void)
     auto t1 = std::chrono::steady_clock::now();
     auto res1 = GetSum(b);
     auto t2 = std::chrono::steady_clock::now();
-    std::cout<<"vector b counting res: "<<res1<<". "<< std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count()
-    <<" ns has passed.\n";
+    std::cout << "vector b counting res: " << res1 << ". " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count()
+              << " ns has passed.\n";
     auto t3 = std::chrono::steady_clock::now();
     auto res2 = GetSum(c);
     auto t4 = std::chrono::steady_clock::now();
-    std::cout<<"vector c counting res: "<<res2<<". "<< std::chrono::duration_cast<std::chrono::nanoseconds>(t4 - t3).count()
-    <<" ns has passed.\n";
+    std::cout << "vector c counting res: " << res2 << ". " << std::chrono::duration_cast<std::chrono::nanoseconds>(t4 - t3).count()
+              << " ns has passed.\n";
     return 0;
 }

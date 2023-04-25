@@ -1,0 +1,3 @@
+set(HEADER_ONLY_LIB MyLibC)
+add_library(${HEADER_ONLY_LIB} INTERFACE)
+target_include_directories(${HEADER_ONLY_LIB} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

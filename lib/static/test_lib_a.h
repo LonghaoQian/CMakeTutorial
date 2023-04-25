@@ -1,7 +1,8 @@
 #ifndef TEST_LIB_A_H
 #define TEST_LIB_A_H
 
-namespace LibA {
+namespace LibA
+{
     void Func1(void);
 }
 
