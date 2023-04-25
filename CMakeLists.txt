@@ -15,6 +15,9 @@ else()
     set(GNU_FLAGS "-O3")
     set(LASAN "") # no lasan lib is add in release mode
 endif()
+
+add_subdirectory(lib)
+
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)
 target_link_libraries(test1 PUBLIC ${LASAN})
@@ -25,7 +28,7 @@ target_link_libraries(test2 PUBLIC ${LASAN})
 target_compile_options(test2 PUBLIC ${GNU_FLAGS})
 
 add_executable(test3 src/test3.cpp)
-target_link_libraries(test3 PUBLIC ${LASAN})
+target_link_libraries(test3 PUBLIC ${LASAN} MyLibA)
 target_compile_options(test3 PUBLIC ${GNU_FLAGS})
 
 add_executable(test4 src/test4.cpp)

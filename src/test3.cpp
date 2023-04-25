@@ -5,6 +5,7 @@
 #include <iterator>
 #include <algorithm>
 #include <random>
+#include "test_lib_a.h"
 
 int64_t GetSum(const std::vector<int32_t>& input)
 {
@@ -21,6 +22,7 @@ int64_t GetSum(const std::vector<int32_t>& input)
 
 int main(void)
 {
+    LibA::Func1();
     constexpr uint32_t SIZE = 20000000; // 1 million random numbers
     std::vector<int32_t> b;
     b.reserve(SIZE);
