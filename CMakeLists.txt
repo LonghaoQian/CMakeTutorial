@@ -25,6 +25,7 @@ add_subdirectory(lib)
 add_subdirectory(cmake_cmds)
 message(STATUS "Var0 " ${VAR0})
 message(STATUS "Var2 " ${VAR2})
+
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)
 target_link_libraries(test1 PUBLIC ${LASAN})
