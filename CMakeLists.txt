@@ -16,8 +16,15 @@ else()
     set(LASAN "") # no lasan lib is add in release mode
 endif()
 
-add_subdirectory(lib)
+#function(GetCompileFlags flags buildType)
+    # ...
+#endfunction()
+set(VAR0 "var set in root CMakeLists.txt")
 
+add_subdirectory(lib)
+add_subdirectory(cmake_cmds)
+message(STATUS "Var0 " ${VAR0})
+message(STATUS "Var2 " ${VAR2})
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)
 target_link_libraries(test1 PUBLIC ${LASAN})
@@ -38,3 +45,6 @@ target_compile_options(test4 PUBLIC ${GNU_FLAGS})
 add_executable(test5 src/test5.cpp)
 target_link_libraries(test5 PUBLIC ${LASAN} MyLibB MyLibC)
 target_compile_options(test5 PUBLIC ${GNU_FLAGS})
+
+#----- access global variable ----
+message(STATUS "Var2 is " ${VAR2})

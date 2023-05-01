@@ -1,0 +1,1 @@
+cmake --build build_release --target clean

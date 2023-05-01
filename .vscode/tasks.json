@@ -42,9 +42,19 @@
         "problemMatcher": []
       },
       {
-        "label": "05 install",
+        "label": "05 clean debug",
         "type": "shell",
-        "command": "./install.sh",
+        "command": "./clean_debug.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "06 clean release",
+        "type": "shell",
+        "command": "./clean_release.sh",
         "group": {
           "kind": "build",
           "isDefault": true

@@ -3,7 +3,8 @@
 class MyInt
 {
 public:
-    MyInt(int *pdNum)
+    explicit MyInt(int *pdNum)
+    //MyInt(int *pdNum)
     {
         std::cout << "in MyInt(int*)" << '\n';
         pdNimPtr = pdNum;
@@ -25,7 +26,15 @@ private:
     int *pdNimPtr{nullptr};
 };
 
+/*
 void Print(MyInt input)
+{
+    std::cout << "in print_MyInt" << '\n';
+    std::cout << input.getMyInt() << '\n';
+}
+*/
+
+void Print(const MyInt& input)
 {
     std::cout << "in print_MyInt" << '\n';
     std::cout << input.getMyInt() << '\n';
@@ -34,9 +43,12 @@ void Print(MyInt input)
 int main(void)
 {
     int *pdNum = new int(666);
-    Print(pdNum);
+    // Print(pdNum);
+    MyInt myInt(pdNum);
+    Print(myInt);
     int *pdNewNum = new int(888);
     *pdNum = 18;
     std::cout << *pdNewNum << '\n';
+    delete pdNewNum;
     return 0;
 }
