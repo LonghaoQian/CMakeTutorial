@@ -42,9 +42,13 @@
         "problemMatcher": []
       },
       {
-        "label": "05 clean debug",
+        "label": "05 debug_config_and_build",
         "type": "shell",
-        "command": "./clean_debug.sh",
+        "dependsOrder": "sequence",
+        "dependsOn" :[
+          "01 config_debug",
+          "03 build_debug",
+        ],
         "group": {
           "kind": "build",
           "isDefault": true
@@ -52,9 +56,13 @@
         "problemMatcher": []
       },
       {
-        "label": "06 clean release",
+        "label": "06 release_config_and_build",
         "type": "shell",
-        "command": "./clean_release.sh",
+        "dependsOrder": "sequence",
+        "dependsOn" :[
+          "02 config_release",
+          "04 build_release",
+        ],
         "group": {
           "kind": "build",
           "isDefault": true
