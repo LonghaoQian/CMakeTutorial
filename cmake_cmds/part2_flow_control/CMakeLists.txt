@@ -1,4 +1,4 @@
-# list variable
+#------------------ list variable ---------------------
 # defining list
 set(L0 a b c)
 set(L1 a;b;c)
@@ -65,7 +65,7 @@ set(L8 4 3 1 a f b kk 2df ADFC 2KD)
 LIST(SORT L8)
 LIST(JOIN L8 "-" L8_str)
 message(STATUS "L8 after sort: " ${L8_str})
-#--------------------------------------------------------------------------------------#
+#--------------------------------flow control---------------------------------------#
 # if statement
 # numerical comparison
 set(VARIABLE 0)
@@ -133,3 +133,20 @@ while(COUNTER LESS "10")
     math(EXPR COUNTER "${COUNTER}+1")
     message(STATUS "counter: " ${COUNTER})
 endwhile()
+#--------------------------------string ------------------------------#
+set(S0 abcd)
+set(S1 "abcd")
+message(STATUS "S0 is " ${S0})
+message(STATUS "S1 is " ${S1})
+set(S3 a b c d) # a list
+set(S4 "a b c d") # a single variable
+foreach(x ${S3})
+    message(STATUS ${x})
+endforeach()
+message(STATUS "------")
+foreach(x ${S4})
+    message(STATUS ${x})
+endforeach()
+# uppper case transform
+string(TOUPPER ${S4} S4_upper)
+message(STATUS ${S4_upper})
