@@ -16,15 +16,10 @@ else()
     set(LASAN "") # no lasan lib is add in release mode
 endif()
 
-#function(GetCompileFlags flags buildType)
-    # ...
-#endfunction()
-set(VAR0 "var set in root CMakeLists.txt")
 
 add_subdirectory(lib)
-add_subdirectory(cmake_cmds)
-message(STATUS "Var0 " ${VAR0})
-message(STATUS "Var2 " ${VAR2})
+# add_subdirectory(cmake_cmds)
+add_subdirectory(cmake_flow_control)
 
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)

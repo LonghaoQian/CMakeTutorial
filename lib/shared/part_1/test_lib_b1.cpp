@@ -1,4 +1,4 @@
-#include "test_lib_b.h"
+#include "test_lib_b1.h"
 #include <iostream>
 
 namespace LibB
