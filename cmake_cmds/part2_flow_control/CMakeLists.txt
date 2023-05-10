@@ -56,7 +56,7 @@ LIST(TRANSFORM L6 STRIP OUTPUT_VARIABLE L6_after_strip) # removes the front and 
 message(STATUS "L6 after STRIP: " ${L6_after_strip})
 LIST(APPEND L6 2)
 LIST(APPEND L6_after_strip 2)
-message(STATUS "L6 before STRIP: " ${L6})
+message(STATUS "L6 after STRIP: " ${L6_after_strip})
 message(STATUS "L5 after REPLACE: " ${L5})
 LIST(TRANSFORM L5 REPLACE "[a-z]" "L" OUTPUT_VARIABLE L5_after_replace)
 message(STATUS "L5 after REPLACE: " ${L5_after_replace})
@@ -73,6 +73,7 @@ if (${VARIABLE} LESS 1)
 endif()
 # determine whether a variable is defined
 set(VAR "VAR")
+#set(VAR "VAR1")
 if(VAR)
     message(STATUS "VAR is defined, value is " ${VAR})
     # determine whether a string is equal to another one
