@@ -18,8 +18,7 @@ endif()
 
 
 add_subdirectory(lib)
-# add_subdirectory(cmake_cmds)
-add_subdirectory(cmake_flow_control)
+add_subdirectory(cmake_cmds)
 
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)
@@ -44,3 +43,9 @@ target_compile_options(test5 PUBLIC ${GNU_FLAGS})
 
 #----- access global variable ----
 message(STATUS "Var2 is " ${VAR2})
+
+#----------
+file(GLOB_RECURSE lib_b_header ${CMAKE_CURRENT_SOURCE_DIR}/lib/shared/*.h)
+foreach(filename ${lib_b_header})
+    message(STATUS "header file is: " ${filename})
+endforeach()

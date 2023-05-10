@@ -6,3 +6,4 @@ target_compile_options(${SHARED_LIB_TARGET} PRIVATE ${GNU_FLAGS})
 # organize all 
 add_subdirectory(part_1)
 add_subdirectory(part_2)
+add_subdirectory(part_3)
