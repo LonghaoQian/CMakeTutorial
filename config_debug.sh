@@ -1,1 +1,1 @@
-cmake -S . -B build_debug -DCMAKE_BUILD_TYPE=Debug -DVAR2=hello_world_2
+cmake -S . -B build_debug -DCMAKE_BUILD_TYPE=Debug -DVAR2=hello_world_2 -DMAIN_FEATURE_1_CONTROL=ON

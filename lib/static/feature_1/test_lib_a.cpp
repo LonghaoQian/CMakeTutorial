@@ -5,6 +5,6 @@ namespace LibA
 {
     void Func1(void)
     {
-        std::cout << "Lib A Func1 called!\n";
+        std::cout << "Lib A Func1 feature_1 called!\n";
     }
 }
