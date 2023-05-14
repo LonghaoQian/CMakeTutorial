@@ -30,6 +30,9 @@ add_definitions(-DMAIN_FEATURE_2)
 add_subdirectory(lib)
 add_subdirectory(cmake_cmds)
 
+#----- add a path to the module 
+message(STATUS "cmake prefix path: "  ${CMAKE_PREFIX_PATH})
+
 #--------------- build target --------------------------
 add_executable(test1 src/test1.cpp)
 target_link_libraries(test1 PUBLIC ${LASAN})
@@ -64,4 +67,40 @@ foreach(filename ${lib_b_header})
     message(STATUS "header file is: " ${filename})
 endforeach()
 
+#-------- Add a path to the cmake module -------
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+include(utils)
+# get filename component
+# get_filename_component
+
+add_subdirectory(test)
+
 #-------- install static library -----------
+include(CMakePackageConfigHelpers)
+message(STATUS "env path is " ${ENV})
+
+set(PackageName TestLib)
+
+#configure_package_config_file(
+#    ${PackageName}Config.cmake.in
+#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake
+#    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PackageName}
+#    PATH_VARS INCLUDE_INSTALL_DIR SYSCONFIG_INSTALL_DIR)
+
+#message(STATUS "include install dir: " ${INCLUDE_INSTALL_DIR})
+#message(STATUS "system config install dir: " ${SYSCONFIG_INSTALL_DIR})
+
+#write_basic_package_version_file(
+#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake
+#    VERSION 1.2.3
+#    COMPATIBILITY SameMajorVersion )
+# set the name of the library
+#install(TARGETS ${PackageName}
+#        EXPORT MyLibB
+#        LIBRARY DESTINATION lib # LIBRARY for dynamic library
+#FILES # copy all the files to the destination
+#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake
+#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake
+#    ${lib_b_header} # copy all the header files to destination
+#    DESTINATION ${dest}
+#)

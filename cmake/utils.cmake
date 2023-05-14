@@ -1,2 +1,11 @@
 message(STATUS "list dir in utils:" ${CMAKE_CURRENT_LIST_DIR})
 message(STATUS "source dir in utils:" ${CMAKE_CURRENT_SOURCE_DIR})
+# function to scan and add automatic target
+function(AddTestTarget source_list lib_list compile_options)
+    foreach(fileName IN LISTS ${source_list})
+        get_filename_component(targetname ${fileName} NAME_WE)
+        add_executable(${targetname} ${fileName})
+        target_link_libraries(${targetname} ${${lib_list}})
+        target_compile_options(${targetname} PRIVATE ${${compile_options}})
+    endforeach()
+endfunction()
