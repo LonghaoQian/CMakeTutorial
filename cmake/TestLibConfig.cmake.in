@@ -1,8 +1,8 @@
 set(TEST_LIB_VERSION 1.0)
-...
+
 @PACKAGE_INIT@ # marco is valid after this line
-...
+
 set_and_check(TEST_LIB_INLCUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
-set_and_check(TEST_LIB_SYSCONFIG_DIR "@PACKAGE_SYSCONFIG_INSTALL_DIR@")
+set_and_check(TEST_LIB_LIBRARY_DIR "@PACKAGE_LIBRARY_INSTALL_DIR@")
 
 check_required_components(TEST_LIB)
