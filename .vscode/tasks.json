@@ -68,6 +68,16 @@
           "isDefault": true
         },
         "problemMatcher": []
-      }
+      },
+      {
+        "label": "07 install_debug",
+        "type": "shell",
+        "command": "./install_debug.sh",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
     ]
   }

@@ -1,0 +1,1 @@
+sudo cmake --install build_release/

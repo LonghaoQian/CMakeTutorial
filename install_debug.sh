@@ -1,1 +1,1 @@
-cmake --install build_debug/lib/graph_analysis_toolbox/
+sudo cmake --install build_debug/

@@ -122,21 +122,3 @@ install(FILES ${lib_b_header}
         DESTINATION include
         PERMISSIONS WORLD_READ WORLD_WRITE
 )
-
-#message(STATUS "include install dir: " ${INCLUDE_INSTALL_DIR})
-#message(STATUS "system config install dir: " ${SYSCONFIG_INSTALL_DIR})
-
-#write_basic_package_version_file(
-#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake
-#    VERSION 1.2.3
-#    COMPATIBILITY SameMajorVersion )
-# set the name of the library
-#install(TARGETS ${PackageName}
-#        EXPORT MyLibB
-#        LIBRARY DESTINATION lib # LIBRARY for dynamic library
-#FILES # copy all the files to the destination
-#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}Config.cmake
-#    ${CMAKE_CURRENT_BINARY_DIR}/${PackageName}ConfigVersion.cmake
-#    ${lib_b_header} # copy all the header files to destination
-#    DESTINATION ${dest}
-#)
