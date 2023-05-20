@@ -64,3 +64,32 @@ function(Foo3 argument_1 argList)
 endfunction()
 
 Foo3(bbbb cccc dddd) # dddd is the optional argument
+
+# parse function arguments with keywords
+function(TestParse required_arg)
+    cmake_parse_arguments(PARSE_ARGV
+    0 # start from the 0 th argument
+    TEST # parse prefix
+    "OPTION_1;OPTION_2"
+    "ONE_VALUE;ANOTHER_VALUE"
+    "MULTI_VALUES;ANOTHER_MULTI_VALUES")
+    message(STATUS "TEST_OPTION_1: " ${TEST_OPTION_1})
+    message(STATUS "TEST_OPTION_2: " ${TEST_OPTION_2})
+    message(STATUS "TEST_ONE_VALUE: " ${TEST_ONE_VALUE})
+    message(STATUS "TEST_ANOTHER_VALUE: " ${TEST_ANOTHER_VALUE})
+    message(STATUS "TEST_MULTI_VALUES: " ${TEST_MULTI_VALUES})
+    message(STATUS "TEST_ANOTHER_MULTI_VALUES: " ${TEST_ANOTHER_MULTI_VALUES})
+endfunction()
+
+TestParse(
+    OPTION_1 # this turns on option 1
+    ONE_VALUE
+    value # sets value to 1st one value keyword
+    ANOTHER_VALUE
+    ddd # sets value to 2nd one value keyword
+    MULTI_VALUES
+    onong # sets value to 1st multi value keyword
+    osnos
+    ANOTHER_MULTI_VALUES
+    dfondog # sets value to 2nd multi value keyword
+)

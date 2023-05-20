@@ -1,2 +1,2 @@
-# add_subdirectory(part1_variables)
+add_subdirectory(part1_variables)
 add_subdirectory(part2_flow_control)
